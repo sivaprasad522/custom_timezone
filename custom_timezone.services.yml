@@ -1,0 +1,7 @@
+services:
+  custom_timezone.site_location_resolver:
+    class: Drupal\custom_timezone\SiteLocationResolver
+    arguments: ['@config.factory']
+
+  custom_timezone.zones:
+    class: Drupal\custom_timezone\Utils\TimezoneHelperFunctions

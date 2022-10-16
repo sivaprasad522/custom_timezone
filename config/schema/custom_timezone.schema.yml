@@ -1,0 +1,19 @@
+# Schema for the configuration files of the custom_timezone module.
+
+custom_timezone.location:
+  type: config_object
+  label: 'Site location settings'
+  mapping:
+    country:
+      type: string
+      label: 'Country'
+    city:
+      type: string
+      label: 'City'
+    site_timezone:
+      type: mapping
+      label: 'Time zone settings'
+      mapping:
+        default:
+          type: string
+          label: 'Default time zone'
