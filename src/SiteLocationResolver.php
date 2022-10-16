@@ -16,6 +16,7 @@ class SiteLocationResolver {
    * @var string
    */
   protected $configName = 'custom_timezone.location';
+
   /**
    * The config.
    *

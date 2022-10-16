@@ -20,6 +20,13 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 class SiteLocationBlock extends BlockBase implements ContainerFactoryPluginInterface {
 
   /**
+   * The config name.
+   *
+   * @var string
+   */
+  protected $configName = 'custom_timezone.location';
+
+  /**
    * Stores the configuration factory.
    *
    * @var \Drupal\Core\Config\ConfigFactoryInterface
@@ -82,8 +89,8 @@ class SiteLocationBlock extends BlockBase implements ContainerFactoryPluginInter
    */
   public function build() {
     $build = [];
-    $site_location_config = $this->configFactory->get('custom_timezone.location');
-    // $service = \Drupal::service('custom_timezone.site_location_resolver');
+    $site_location_config = $this->configFactory->get($this->configName);
+
     $zones = $this->zonesList->getZones();
     $timezone = $site_location_config->get('site_timezone.default');
     $timezone_continent = explode("/", $timezone);
