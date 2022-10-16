@@ -1,0 +1,8 @@
+name: Custom Timezone
+type: module
+description: 'Handles the custom timezone configuration for the website.'
+package: Custom
+core_version_requirement: ^8 || ^9
+configure: custom_timezone.admin_config_timezone
+dependencies:
+  - drupal:block
