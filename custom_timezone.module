@@ -1,0 +1,19 @@
+<?php
+
+/**
+ * @file
+ * Defines Drupal hooks for custom_timezone module.
+ */
+
+/**
+ * Implements hook_theme().
+ */
+function custom_timezone_theme() {
+  return [
+    'site_location_block' => [
+      'variables' => [
+        'data' => [],
+      ],
+    ],
+  ];
+}

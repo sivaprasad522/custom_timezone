@@ -1,0 +1,27 @@
+{#
+/**
+ * @file
+ * Default theme implementation for a Site Location and current time block.
+ *
+ * Available variables:
+ * - country: The country code which is entered in admin settings.
+ * - city: The city code which is entered in admin settings.
+ * - timezone_name: The timezone which is selected in admin settings.
+ * - time: The time from service based on the timezone chosen in admin settings.
+ * - date: The date from service based on the timezone chosen in admin settings.
+ *
+ * @ingroup themeable
+ */
+#}
+
+{% block content %}
+<div class="site-location-date-time">
+   <div class="site-location-time">
+      <h2> {{ data.time }} </h2>
+   </div>
+   <div class="site-location-date">
+      <p> {{ data.date }}</P>
+      <p> {{ "Time in "|t ~ data.timezone_name ~ ", " ~ data.city ~ ", " ~ data.country }} </p>
+   </div>
+</div>
+{% endblock %}
