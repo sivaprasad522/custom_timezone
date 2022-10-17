@@ -1,0 +1,6 @@
+timezone-js-library:
+  js:
+    js/ajax.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupalSettings

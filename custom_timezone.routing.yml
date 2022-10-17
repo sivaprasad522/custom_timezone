@@ -5,3 +5,12 @@ custom_timezone.admin_config_timezone:
     _title: 'Timezone configuration settings'
   requirements:
     _permission: 'administer site configuration'
+  options:
+    _admin_route: TRUE
+custom_timezone.get_time:
+  path: 'get-time'
+  defaults:
+    _controller: '\Drupal\custom_timezone\Controller\SiteLocationController::getTime'
+    _title: 'Get Current Time via AJAX'
+  requirements:
+    _permission: 'access content'

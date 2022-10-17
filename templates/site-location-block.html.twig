@@ -13,14 +13,14 @@
  * @ingroup themeable
  */
 #}
-
+{{ attach_library('custom_timezone/timezone-js-library') }}
 {% block content %}
 <div class="site-location-date-time">
    <div class="site-location-time">
       <h2> {{ data.time }} </h2>
    </div>
-   <div class="site-location-date">
-      <p> {{ data.date }}</P>
+   <div class="site-location-date-wrapper">
+      <p class="site-location-date" > {{ data.date }}</P>
       <p> {{ "Time in "|t ~ data.timezone_name ~ ", " ~ data.city ~ ", " ~ data.country }} </p>
    </div>
 </div>

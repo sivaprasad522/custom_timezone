@@ -3,7 +3,6 @@
 namespace Drupal\custom_timezone\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
-use Drupal\Core\Cache\Cache;
 use Drupal\Core\Config\ConfigFactoryInterface;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
@@ -105,19 +104,12 @@ class SiteLocationBlock extends BlockBase implements ContainerFactoryPluginInter
         'time' => $this->siteLocationResolver->getCurrentDateTime('g:i a'),
         'date' => $this->siteLocationResolver->getCurrentDateTime('l, j F Y'),
       ],
+      '#cache' => [
+        'tags' => ['config:custom_timezone.location'],
+      ],
     ];
 
     return $build;
-  }
-
-  /**
-   * {@inheritdoc}
-   */
-  public function getCacheTags() {
-    return Cache::mergeTags(
-      parent::getCacheTags(),
-      $this->configFactory->get('custom_timezone.location')->getCacheTags()
-    );
   }
 
 }
